@@ -3,9 +3,11 @@ var playerSelected = false;
 var usedChars = [];
 
 // audio for events
+var fightMusic = new Audio('assets/sounds/fightmusic.mp3')
 var blaster = new Audio('assets/sounds/blaster.mp3')
 var yoda = new Audio('assets/sounds/yodanotry.mp3')
 var cantina = new Audio('assets/sounds/cantina.mp3')
+
 
 // Character template object
 var chars = [
@@ -50,6 +52,8 @@ makeCharSelect()
 $('body').on('click', '#charSelect > .charCard', function () {
     switch (playerSelected) {
         case false:
+            fightMusic.currentTime = 0
+            fightMusic.play()
             usedChars.push(parseInt($(this).attr('index')))
             $(this).addClass('player')
             $(this).remove();
@@ -87,9 +91,10 @@ $('body').on('click', '#attackButton', function (){
                 $('.player > h3').text('Health: ' + $('.player').attr('hp'))
                 // If player hp falls to 0 or below after counterAttack, game over
                 if (parseInt($('.player').attr('hp')) <= 0) {
-                    blaster.pause()
                     yoda.currenttime = 0
+                    fightMusic.pause()
                     yoda.play()
+                    blaster.pause()
                     $('.resetButton').css({'display': 'block'})
                     $('#title').fadeIn()
                     $('#title').append('<button class="resetButton">DO! - OR DO NOT, THERE IS NO TRY! (CLICK TO DO AGAIN)</button>')
@@ -108,6 +113,7 @@ $('body').on('click', '#attackButton', function (){
 
     // If all chars have been used displays victory message and restart button
     if (usedChars.length === chars.length) {
+        fightMusic.pause()
         cantina.currentTime = 0
         cantina.play()
         $('#defender').html('')
