@@ -1,0 +1,143 @@
+
+html {
+    height: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+    box-sizing: border-box;
+    background: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+#gameBoard {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) .25fr;
+    grid-template-rows: .25fr repeat(3, 1fr) .25fr;
+    grid-template-areas:
+    ". . ."
+    ". title ."
+    ". battleArea ."
+    ". charSelect ."
+    ". . .";
+}
+#title {
+    grid-area: title;
+    align-self: center;
+    border-radius: 15px;
+    border: 2px solid #FFD700;
+    background: black;
+}
+#title img {
+    border-radius: 15px;
+}
+.resetButton {
+    margin: auto;
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    font-size: 2em;
+    padding: .5em;
+    border-radius: 15px;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    background: black;
+}
+#charSelect {
+    grid-area: charSelect;
+    display: flex;
+    justify-content: center;
+}
+#charSelect .charCard {
+    cursor: pointer;
+}
+#battleArea {
+    grid-area: battleArea;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#vs {
+    display: none;
+    width: 250px;
+    text-align: center;
+    align-self: center;
+    position: relative;
+}
+#attackButton {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    border-radius: 15px;
+    color: #FFD700;
+    background: black;
+    cursor: pointer;
+}
+.charCard {
+    border: 3px solid red;
+    margin: 2px;
+    text-align: center;
+    width: 250px;
+    height: 300px;
+    display: flex;
+    flex-direction: column-reverse;
+    border-radius: 10px;
+}
+#attacker {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column-reverse;
+}
+h1 {
+    text-align: center;
+    font-size: 2em;
+    padding: .5em;
+    border-radius: 15px;
+    border: 2px solid #FFD700;
+    color: #FFD700;
+    background: black;
+}
+#attacker h1 {
+    border: 2px dashed #FFD700;
+}
+#defender h1 {
+    border: 2px dashed #FFD700;
+}
+.charCard h2 {
+    font-size: 1.5em;
+    color: #FFD700;
+    background: black;
+    padding: .5em;
+}
+.charCard h3 {
+    font-size: 1.15em;
+    color: #FFD700;
+    background: black;
+    border-radius: 0 0 5px 5px;
+}
+
+/* Card background images */
+#han {
+    background: url("../images/hanSolo.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#jarJar {
+    background: url("../images/jarJar.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#boba {
+    background: url("../images/bobaFett.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#leia {
+    background: url("../images/princessLeia.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
