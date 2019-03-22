@@ -45,13 +45,18 @@ body {
     color: #FFD700;
     background: black;
 }
+.resetButton:hover {
+    color: black;
+    background: #FFD700;
+}
 #charSelect {
     grid-area: charSelect;
     display: flex;
     justify-content: center;
 }
-#charSelect .charCard {
+#charSelect .charCard:hover {
     cursor: pointer;
+    border: 3px solid blue;
 }
 #battleArea {
     grid-area: battleArea;
@@ -76,6 +81,10 @@ body {
     color: #FFD700;
     background: black;
     cursor: pointer;
+}
+#attackButton:hover {
+    color: black;
+    background: #FFD700;
 }
 .charCard {
     border: 3px solid red;

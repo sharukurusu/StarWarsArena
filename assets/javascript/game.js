@@ -8,7 +8,6 @@ var blaster = new Audio('assets/sounds/blaster.mp3')
 var yoda = new Audio('assets/sounds/yodanotry.mp3')
 var cantina = new Audio('assets/sounds/cantina.mp3')
 
-
 // Character template object
 var chars = [
     {
@@ -91,7 +90,7 @@ $('body').on('click', '#attackButton', function (){
                 $('.player > h3').text('Health: ' + $('.player').attr('hp'))
                 // If player hp falls to 0 or below after counterAttack, game over
                 if (parseInt($('.player').attr('hp')) <= 0) {
-                    yoda.currenttime = 0
+                    yoda.currentTime = 0
                     fightMusic.pause()
                     yoda.play()
                     blaster.pause()
